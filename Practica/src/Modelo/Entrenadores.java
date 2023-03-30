@@ -3,13 +3,13 @@ public class Entrenadores {
     private int id_entrenador;
     private String nombre;
     private int edad;
-    private int id_equipo;
+    private int id_equipos;
 
-    public Entrenadores(int id_entrenador, String nombre, int edad, int id_equipo) {
+    public Entrenadores(int id_entrenador, String nombre, int edad, int id_equipos) {
         this.id_entrenador = id_entrenador;
         this.nombre = nombre;
         this.edad = edad;
-        this.id_equipo = id_equipo;
+        this.id_equipos = id_equipos;
     }
 
     public int getId_entrenador() {
@@ -31,17 +31,17 @@ public class Entrenadores {
     public void setEdad(int edad) {
         this.edad = edad;
     }
-    public int getId_equipo() {
-        return id_equipo;
+    public int getId_equipos() {
+        return id_equipos;
     }
-    public void setId_equipo(int id_equipo) {
-        this.id_equipo = id_equipo;
+    public void setId_equipos(int id_equipos) {
+        this.id_equipos = id_equipos;
     }
 
     @Override
     public String toString() {
         return "Entrenadores [id_entrenador=" + id_entrenador + ", nombre=" + nombre + ", edad=" + edad + ", id_equipo="
-                + id_equipo + "]";
+                + id_equipos + "]";
     }
 
 

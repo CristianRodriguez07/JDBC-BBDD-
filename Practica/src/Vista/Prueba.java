@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Prueba {
+ static ControladorJDBC ec = new ControladorJDBC();
  public static void main(String[] args) {
   Scanner tecladoNum = new Scanner(System.in);
   Scanner teclado = new Scanner(System.in);
@@ -62,7 +63,6 @@ public class Prueba {
     Scanner teclado = new Scanner(System.in);
     System.out.println("Introduce el nombre del entrenador que quieres seleccionar: ");
     String nombre = teclado.nextLine();
-    ControladorJDBC ec = new ControladorJDBC();
     ArrayList<Entrenadores> lista = ec.SelectByName(nombre);
     for (int i = 0; i < lista.size(); i++) {
      System.out.println(lista.get(i));
@@ -73,12 +73,10 @@ public class Prueba {
     Scanner tecladoNum = new Scanner(System.in);
     System.out.println("Introduce el id del entrenador que quieres borrar: ");
     int id = tecladoNum.nextInt();
-    ControladorJDBC ec = new ControladorJDBC();
     ec.DeleteEntrenador(id);
  }
 
  private static void SelectAll() {
-  ControladorJDBC ec = new ControladorJDBC();
   ArrayList<Entrenadores> lista = ec.SelectAll();
   for (int i = 0; i < lista.size(); i++) {
    System.out.println(lista.get(i));
@@ -89,10 +87,9 @@ public class Prueba {
   Scanner tecladoNum = new Scanner(System.in);
   System.out.println("Introduce el id del entrenador que quieres seleccionar: ");
   int id = tecladoNum.nextInt();
-  ControladorJDBC ec = new ControladorJDBC();
   Entrenadores e = ec.SelectByEntrenadorId(id);
   System.out.println(e);
-  ArrayList<Entrenadores> lista = ec.SelectAll();
+  ArrayList<Entrenadores> lista = ec.SelectById(id);
   for (int i = 0; i < lista.size(); i++) {
    System.out.println(lista.get(i));
  }
@@ -108,9 +105,8 @@ public class Prueba {
   System.out.println("Introduce la edad del entrenador que quieres actualizar: ");
   int edad = tecladoNum.nextInt();
   System.out.println("Introduce el id del equipo del entrenador que quieres actualizar: ");
-  int id_equipo = tecladoNum.nextInt();
-  ControladorJDBC ec = new ControladorJDBC();
-  ec.UpdateEntrenador(id, nombre, edad, id_equipo);
+  int id_equipos = tecladoNum.nextInt();
+  ec.UpdateEntrenador(id, nombre, edad, id_equipos);
  }
 
  private static void InsertarEntrenador() {
@@ -124,7 +120,6 @@ public class Prueba {
   int edad = tecladoNum.nextInt();
   System.out.println("Introduce el id del equipo del entrenador que quieres insertar: ");
   int id_equipo = tecladoNum.nextInt();
-  ControladorJDBC ec = new ControladorJDBC();
   ec.InsertEntrenador(id, nombre, edad, id_equipo);
  }
 }

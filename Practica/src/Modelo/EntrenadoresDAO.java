@@ -8,15 +8,15 @@ public interface EntrenadoresDAO {
 
     ArrayList<Entrenadores> SelectByName(String nombre);
 
-    public Entrenadores SelectByEquipoId(int id_equipo);
+    public Entrenadores SelectByEquipoId(int id_equipos);
 
     Entrenadores SelectByEntrenadorId(int id_entrenador);
 
     boolean InsertEntrenador(int id, String nombre, int edad, int id_equipo);
 
-    boolean UpdateEntrenador(int entrenador_id, String nombre, int edad, int id_equipo);
+    boolean UpdateEntrenador(int id, String nombre, int edad, int id_equipos);
 
-    boolean DeleteEntrenador(int entrenador_id);
+    boolean DeleteEntrenador(int id);
 
 
 }
